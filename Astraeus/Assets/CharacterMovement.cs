@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour {
     public float speed;
+    public float jump;
 
     public Rigidbody2D rb;
 
@@ -23,7 +24,7 @@ public class CharacterMovement : MonoBehaviour {
         float vertical = Input.GetAxis("Vertical");
 
         float flyMode = Input.GetAxis("Submit");
-
+        
         //move player acording to input
         if (flyMode == 0)
         {
@@ -34,6 +35,12 @@ public class CharacterMovement : MonoBehaviour {
         {
             rb.gravityScale = 0;
         }
+
+        if (vertical == 1)
+        {
+
+        }
+
         Vector2 movement = new Vector2(horizontal, vertical);
 
         rb.AddForce(movement * speed);
